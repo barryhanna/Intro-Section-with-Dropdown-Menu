@@ -8,5 +8,19 @@
   --medium-gray: hsl(0, 0%, 41%);
   --almost-black: hsl(0, 0%, 8%);
 
-  --fs-base: 18px;
+  --fs-base: 1.125rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+
+  font-family: 'Epilogue';
+  font-size: var(--fs-base);
 }
