@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@400;600;700&display=swap');
 
 :root {
   --mobile-width: 375px;
@@ -23,4 +23,97 @@ body {
 
   font-family: 'Epilogue';
   font-size: var(--fs-base);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+h1 {
+  letter-spacing: -0.5px;
+  font-size: 2.25rem;
+}
+
+.login {
+  display: none;
+}
+
+nav {
+  background-color: var(--almost-white);
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+
+nav li {
+  display: flex;
+}
+
+nav img {
+  display: inline-block;
+}
+
+nav li ul {
+  display: none;
+}
+
+main {
+  text-align: center;
+}
+
+header {
+  --vertical-spacer: 1rem;
+  padding-block: var(--vertical-spacer, 1rem);
+}
+
+.container {
+  --vertical-spacer: 1rem;
+  max-width: 90%;
+  margin: var(--vertical-spacer) auto;
+}
+
+.col {
+  padding-block: 1.5rem;
+}
+
+.col > * + * {
+  margin-top: 1rem;
+}
+
+.clients {
+  --vertical-spacer: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: var(--vertical-spacer);
+  margin: var(--vertical-spacer) auto;
+}
+
+.client-item {
+  width: 20%;
+}
+
+.body-text {
+  color: hsla(0, 0%, 41%, 1);
+  line-height: 1.625;
+  font-weight: 400;
+}
+
+.btn {
+  --bg-color: black;
+  --color: white;
+  display: inline-block;
+  background-color: var(--bg-color);
+  color: var(--color);
+  text-decoration: none;
+  padding: 1em 2em;
+  border-radius: 15px;
 }
