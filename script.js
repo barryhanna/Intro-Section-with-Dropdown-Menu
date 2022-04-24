@@ -1,6 +1,7 @@
 const menuButtons = document.querySelectorAll('[data-sub]');
 const closeMenuBtn = document.querySelector('.close-btn');
 const nav = document.querySelector('nav');
+const menuToggleBtn = document.querySelector('.menu-toggle');
 
 menuButtons.forEach((button) =>
   button.addEventListener('click', (e) => {
@@ -10,7 +11,11 @@ menuButtons.forEach((button) =>
 );
 
 closeMenuBtn.addEventListener('click', (e) => {
-  // TODO:
+  nav.classList.remove('open');
+});
+
+menuToggleBtn.addEventListener('click', (e) => {
+  nav.classList.add('open');
 });
 
 function toggleArrow(el) {

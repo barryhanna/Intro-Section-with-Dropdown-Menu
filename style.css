@@ -100,6 +100,7 @@ header {
 }
 
 nav {
+  display: none;
   position: fixed;
   background-color: rgba(0, 0, 0, 0.75);
   top: 0;
@@ -108,14 +109,38 @@ nav {
   bottom: 0;
   height: 100%;
   width: 100%;
+  animation: fadeIn 300ms ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+nav.open {
+  display: revert;
+}
+
+.menu-toggle {
+  cursor: pointer;
 }
 
 .nav__inner {
   background-color: var(--almost-white);
   position: absolute;
-  /* right: -100%; */
-  width: 70%;
+  right: 100%;
+  width: 60%;
   height: 100%;
+  transition: right 200ms ease-in;
+  transition-delay: 300ms;
+}
+
+nav.open .nav__inner {
+  right: 0;
 }
 
 nav li {
@@ -141,8 +166,9 @@ nav li[data-sub].expanded + .sub-menu {
   display: revert;
 }
 
-close-btn--container {
-  display: block;
+.close-btn--container {
+  display: flex;
+  justify-content: flex-end;
 }
 
 .close-btn {
@@ -150,6 +176,7 @@ close-btn--container {
   border: none;
   background-color: transparent;
   cursor: pointer;
+  width: fit-content;
 }
 
 a img {
