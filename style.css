@@ -15,6 +15,7 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  /* outline: 1px solid crimson; */
 }
 
 body {
@@ -38,31 +39,6 @@ img {
 h1 {
   letter-spacing: -0.5px;
   font-size: 2.25rem;
-}
-
-.login {
-  display: none;
-}
-
-nav {
-  background-color: var(--almost-white);
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-}
-
-nav li {
-  display: flex;
-}
-
-nav img {
-  display: inline-block;
-}
-
-nav li ul {
-  display: none;
 }
 
 main {
@@ -116,4 +92,66 @@ header {
   text-decoration: none;
   padding: 1em 2em;
   border-radius: 15px;
+}
+
+/* Nav */
+.login {
+  display: none;
+}
+
+nav {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.75);
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.nav__inner {
+  background-color: var(--almost-white);
+  position: absolute;
+  /* right: -100%; */
+  width: 70%;
+  height: 100%;
+}
+
+nav li {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+nav a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  font-size: 1rem;
+  color: var(--medium-gray);
+  line-height: 2rem;
+}
+
+nav li[data-sub] + .sub-menu {
+  display: none;
+}
+
+nav li[data-sub].expanded + .sub-menu {
+  display: revert;
+}
+
+close-btn--container {
+  display: block;
+}
+
+.close-btn {
+  padding: 1rem;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+a img {
+  pointer-events: none;
 }

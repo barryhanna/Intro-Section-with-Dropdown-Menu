@@ -19,20 +19,24 @@
         <img src="./images/logo.svg" alt="Snap Logo">
       </div>
       <nav>
-        <div class="close-btn">
-          <img src="./images/icon-close-menu.svg" alt="Close Menu" aria-label="Close Menu">
-        </div>
-        <ul role="list">
-          <li>
-            <a href="#">Features<img src="./images/icon-arrow-down.svg"></a>
+        <div class="nav__inner">
+          <div class="close-btn--container">
+            <button class="close-btn">
+              <img src="./images/icon-close-menu.svg" alt="Close Menu" aria-label="Close Menu">
+            </button>
+          </div>
+          <ul role="list">
+            <li data-sub>
+              <a href="#">Features<img src="./images/icon-arrow-down.svg"></a>
+            </li>
             <ul class="sub-menu">
               <li><a href="#"><img src="./images/icon-todo.svg">Todo List</a></li>
               <li><a href="#"><img src="./images/icon-calendar.svg">Calendar</a></li>
               <li><a href="#"><img src="./images/icon-reminders.svg">Reminders</a></li>
               <li><a href="#"><img src="./images/icon-planning.svg">Planning</a></li>
             </ul>
-          </li>
-          <li><a href="#">Company<img src="./images/icon-arrow-down.svg"></a>
+            <li data-sub><a href="#">Company<img src="./images/icon-arrow-down.svg"></a>
+            </li>
             <ul class="sub-menu">
               <li>
                 <a href="#">History</a>
@@ -44,10 +48,10 @@
                 <a href="#">Blog</a>
               </li>
             </ul>
-          </li>
-          <li><a href="#">Careers</a></li>
-          <li><a href="#">About</a></li>
-        </ul>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">About</a></li>
+          </ul>
+        </div>
       </nav>
       <div class="menu-toggle">
         <img src="./images/icon-menu.svg" alt="Menu Button">
@@ -95,7 +99,7 @@
     </div>
   </main>
 
-
+  <script src="./script.js"></script>
 </body>
 
 </html>
