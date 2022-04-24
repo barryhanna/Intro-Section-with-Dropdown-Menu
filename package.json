@@ -1,0 +1,24 @@
+{
+  "name": "Intro-Section-with-Dropdown-Menu",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "build:ts": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/barryhanna/Intro-Section-with-Dropdown-Menu.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/barryhanna/Intro-Section-with-Dropdown-Menu/issues"
+  },
+  "homepage": "https://github.com/barryhanna/Intro-Section-with-Dropdown-Menu#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^4.6.3"
+  }
+}
