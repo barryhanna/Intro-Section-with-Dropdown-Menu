@@ -64,6 +64,16 @@ header {
   margin-top: 1rem;
 }
 
+@media (min-width: 700px) {
+  .columns {
+    display: flex;
+  }
+
+  .hero {
+    order: 1;
+  }
+}
+
 .clients {
   --vertical-spacer: 2rem;
   display: flex;
@@ -104,6 +114,11 @@ header {
 /* Nav */
 .login {
   display: none;
+}
+
+.login a {
+  color: black;
+  text-decoration: none;
 }
 
 nav {
@@ -176,12 +191,17 @@ nav a {
   line-height: 2rem;
 }
 
-nav li[data-sub] + .sub-menu {
+nav li[data-sub] .sub-menu {
   display: none;
 }
 
-nav li[data-sub].expanded + .sub-menu {
-  display: revert;
+nav li[data-sub].expanded {
+  flex-direction: column;
+}
+
+nav li[data-sub].expanded .sub-menu {
+  display: block;
+  margin-top: 1rem;
 }
 
 .close-btn--container {
@@ -199,4 +219,83 @@ nav li[data-sub].expanded + .sub-menu {
 
 a img {
   pointer-events: none;
+}
+
+@media (min-width: 700px) {
+  header {
+    align-items: center;
+    gap: 1rem;
+  }
+
+  nav {
+    display: block;
+    position: static;
+    background-color: transparent;
+    animation: none;
+    color: black;
+  }
+
+  .nav__inner {
+    display: flex;
+    align-items: center;
+    background: none;
+    position: static;
+    animation: none;
+  }
+
+  .nav__inner ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    margin: auto;
+  }
+
+  .nav__inner li {
+    margin-bottom: 0;
+  }
+
+  .close-btn--container {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: none;
+  }
+
+  .login {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .container {
+    --vertical-spacer: 2rem;
+    max-width: var(--desktop-width);
+  }
+
+  .col {
+    text-align: left;
+  }
+
+  .columns {
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+
+  .clients {
+    max-width: 1440px;
+    margin: 0 auto;
+    justify-content: space-around;
+  }
+
+  /* nav li[data-sub].expanded ul {
+    position: relative;
+  }
+
+  nav li[data-sub].expanded + .sub-menu {
+    position: absolute;
+    display: block;
+    top: 1rem;
+    left: 1rem;
+  } */
 }
