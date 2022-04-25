@@ -1,11 +1,14 @@
-const menuButtons = document.querySelectorAll('[data-sub]');
+const menuButtons: HTMLAnchorElement[] = Array.from(
+  document.querySelectorAll('[data-sub]')
+);
 const closeMenuBtn = document.querySelector('.close-btn') as HTMLElement;
 const nav = document.querySelector('nav') as HTMLElement;
 const menuToggleBtn: HTMLElement = document.querySelector('.menu-toggle');
 const heroImg = document.querySelector('.hero__img');
 
-menuButtons.forEach((button: HTMLLIElement) =>
+menuButtons.forEach((button: HTMLElement) =>
   button.addEventListener('click', (e) => {
+    clearExpandedButtons(menuButtons);
     button.classList.toggle('expanded');
     toggleArrow(e.target);
   })
@@ -27,15 +30,6 @@ function toggleArrow(el: EventTarget): void {
     : './images/icon-arrow-up.svg';
 }
 
-// function changeImageForSize() {
-//   // const desktopSize = getComputedStyle(document.body)
-//   //   .getPropertyValue('--desktop-width')
-//   //   .split('px')[0];
-//   const heroImage: HTMLImageElement = document.querySelector('.hero__img');
-//   heroImage.src =
-//     window.innerWidth >= 700
-//       ? './images/image-hero-desktop.png'
-//       : (heroImage.src = './images/image-hero-mobile.png');
-// }
-
-// window.onresize = changeImageForSize;
+function clearExpandedButtons(buttons: HTMLAnchorElement[]): void {
+  buttons.forEach((button) => button.classList.remove('expanded'));
+}

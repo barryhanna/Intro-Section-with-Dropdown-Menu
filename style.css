@@ -179,9 +179,11 @@ nav.open .nav__inner {
 nav li {
   display: flex;
   margin-bottom: 1rem;
+  width: fit-content;
 }
 
 nav a {
+  color: var(--medium-gray);
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -189,6 +191,10 @@ nav a {
   font-size: 1rem;
   color: var(--medium-gray);
   line-height: 2rem;
+}
+
+nav a:hover {
+  color: black;
 }
 
 nav li[data-sub] .sub-menu {
@@ -237,10 +243,11 @@ a img {
 
   .nav__inner {
     display: flex;
+    width: 100%;
     align-items: center;
+    justify-content: flex-start;
     background: none;
     position: static;
-    animation: none;
   }
 
   .nav__inner ul {
@@ -248,7 +255,6 @@ a img {
     flex-direction: row;
     align-items: center;
     gap: 1rem;
-    margin: auto;
   }
 
   .nav__inner li {
@@ -288,14 +294,18 @@ a img {
     justify-content: space-around;
   }
 
-  /* nav li[data-sub].expanded ul {
+  nav li[data-sub].expanded {
     position: relative;
   }
 
-  nav li[data-sub].expanded + .sub-menu {
+  nav li[data-sub].expanded > .sub-menu {
+    background-color: white;
     position: absolute;
     display: block;
+    box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.149126);
+    border-radius: 10px;
     top: 1rem;
-    left: 1rem;
-  } */
+    right: 0;
+    padding: 1.75rem;
+  }
 }
