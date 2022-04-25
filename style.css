@@ -9,13 +9,22 @@
   --almost-black: hsl(0, 0%, 8%);
 
   --fs-base: 1.125rem;
+
+  --step--2: clamp(1.56rem, calc(0.97rem + 2.78vw), 3.47rem);
+  --step--1: clamp(1.88rem, calc(1.17rem + 3.33vw), 4.17rem);
+  --step-0: clamp(2.25rem, calc(1.4rem + 4vw), 5rem);
+  --step-1: clamp(2.7rem, calc(1.68rem + 4.8vw), 6rem);
+  --step-2: clamp(7.2rem, calc(2.02rem + 5.76vw), 3.24rem);
+  --step-3: clamp(8.64rem, calc(2.42rem + 6.91vw), 3.89rem);
+  --step-4: clamp(10.37rem, calc(2.9rem + 8.29vw), 4.67rem);
+  --step-5: clamp(12.44rem, calc(3.48rem + 9.95vw), 5.6rem);
 }
 
 *,
 *::before,
 *::after {
   box-sizing: border-box;
-  /* outline: 1px solid crimson; */
+  outline: 1px solid crimson;
 }
 
 body {
@@ -38,7 +47,7 @@ img {
 
 h1 {
   letter-spacing: -0.5px;
-  font-size: 2.25rem;
+  font-size: var(--step-0);
 }
 
 main {
@@ -48,6 +57,7 @@ main {
 header {
   --vertical-spacer: 1rem;
   padding-block: var(--vertical-spacer, 1rem);
+  padding-inline: 5vw;
 }
 
 .container {
@@ -64,9 +74,15 @@ header {
   margin-top: 1rem;
 }
 
+.hero__img {
+  object-fit: contain;
+}
+
 @media (min-width: 700px) {
   .columns {
     display: flex;
+    padding-inline: 5vw;
+    align-items: center;
   }
 
   .hero {
@@ -84,13 +100,16 @@ header {
 }
 
 .client-item {
-  width: 20%;
+  width: 25%;
+  display: grid;
+  place-content: center;
 }
 
 .body-text {
   color: hsla(0, 0%, 41%, 1);
   line-height: 1.625;
   font-weight: 400;
+  font-size: clamp(1rem, 2vw + 1rem, 1.125rem);
 }
 
 .btn {
@@ -117,8 +136,17 @@ header {
 }
 
 .login a {
-  color: black;
+  color: var(--medium-gray);
   text-decoration: none;
+  border: 1px solid transparent;
+  border-radius: 14px;
+  padding: 0.5em 1em;
+  font-size: 0.875rem;
+}
+
+.login a:hover,
+.login a:active {
+  border: 1px solid currentColor;
 }
 
 nav {
@@ -281,6 +309,7 @@ a img {
 
   .col {
     text-align: left;
+    margin-right: 5vw;
   }
 
   .columns {
