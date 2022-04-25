@@ -1,4 +1,4 @@
-const menuButtons: HTMLAnchorElement[] = Array.from(
+const menuButtons: HTMLElement[] = Array.from(
   document.querySelectorAll('[data-sub]')
 );
 const closeMenuBtn = document.querySelector('.close-btn') as HTMLElement;
@@ -8,7 +8,6 @@ const heroImg = document.querySelector('.hero__img');
 
 menuButtons.forEach((button: HTMLElement) =>
   button.addEventListener('click', (e) => {
-    clearExpandedButtons(menuButtons);
     button.classList.toggle('expanded');
     toggleArrow(e.target);
   })
@@ -28,8 +27,4 @@ function toggleArrow(el: EventTarget): void {
   imageElement.src = imageElement.src.includes('up')
     ? './images/icon-arrow-down.svg'
     : './images/icon-arrow-up.svg';
-}
-
-function clearExpandedButtons(buttons: HTMLAnchorElement[]): void {
-  buttons.forEach((button) => button.classList.remove('expanded'));
 }
