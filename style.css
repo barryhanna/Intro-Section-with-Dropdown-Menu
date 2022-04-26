@@ -24,7 +24,7 @@
 *::before,
 *::after {
   box-sizing: border-box;
-  outline: 1px solid crimson;
+  /* outline: 1px solid crimson; */
 }
 
 body {
@@ -100,7 +100,7 @@ header {
 }
 
 .client-item {
-  width: 25%;
+  width: 100%;
   display: grid;
   place-content: center;
 }
@@ -317,12 +317,6 @@ a img {
     margin: 0 auto;
   }
 
-  .clients {
-    max-width: 1440px;
-    margin: 0 auto;
-    justify-content: space-around;
-  }
-
   nav li[data-sub].expanded {
     position: relative;
   }
@@ -336,5 +330,19 @@ a img {
     top: 1rem;
     right: 0;
     padding: 1.75rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  .clients {
+    max-width: 1440px;
+    margin: 0 auto;
+    margin-left: 5%;
+    margin-top: -5rem;
+    justify-content: flex-start;
+  }
+
+  .client-item {
+    width: 10%;
   }
 }
